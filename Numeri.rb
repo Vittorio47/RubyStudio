@@ -12,6 +12,7 @@ for cont in 1..max
 		puts "sbaglito"
 	end	
 end
+puts
 print"numero risposte esatte ", esatte, "\n"
 print"numero risposte sbagliate ", max - esatte, "\n"
 case esatte 
