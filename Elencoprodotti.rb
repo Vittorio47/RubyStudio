@@ -6,10 +6,17 @@ def leggi_file(file_dati)
       lst << [prod, prezzo.to_f]
     end  
   end
-  lst
+  rescue Errno::ENOENT
+    puts "File inesistente, al prossimo salvataggio dei dati sarà creato"
+  ensure 
+    return lst
 end
 
 def scrivi_file(file_dati, lst)
+  unless defined? lst && lst.size != 0
+    puts "Nulla da scrivere. Nessun elemento trovato"
+    return
+  end
   File.open(file_dati, 'w') do |f2|  
     lst.each do |prod, prezzo|
        f2.puts prod + ',' + prezzo.to_s
@@ -18,6 +25,9 @@ def scrivi_file(file_dati, lst)
 end
 
 def leggi_dati(lst)
+  unless defined? lst && lst.size != 0
+    lst = []
+  end
   print "Inserisci il prodotto: "
   prod = gets.chomp.to_s
   print "Inserisci il prrezzoo: "
@@ -26,6 +36,10 @@ def leggi_dati(lst)
 end
 
 def stampa_dati(lst)
+  unless defined? lst && lst.size != 0
+    puts "Nessun elemento trovato"
+    return
+  end
   lst.each do |prod, prezzo|
      printf("prodotto: %20s     prezzo: %10.2f\n", prod, prezzo)
   end
@@ -40,7 +54,7 @@ def stampa_menu
   puts "4 - scrivere il file"
 end
 
-dati = "../Ruby_dati/dati.txt"
+dati = "../Ruby_dati/datti.txt"
 
 while true
   stampa_menu
