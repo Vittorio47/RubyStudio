@@ -1,0 +1,5 @@
+computer,400.0
+tastiera,15.0
+mouse,8.0
+cavi,3.0
+monitor,120.0

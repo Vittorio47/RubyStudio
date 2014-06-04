@@ -1,5 +1,6 @@
 .DS_Store
 *~
 *\#
-Ruby_dati
+/Ruby_dati/*
+!/Ruby_dati/dati.txt
 
