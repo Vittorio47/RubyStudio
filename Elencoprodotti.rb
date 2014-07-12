@@ -6,10 +6,13 @@ def leggi_file(file_dati)
       lst << [prod, prezzo.to_f]
     end  
   end
-  rescue Errno::ENOENT
+
+rescue Errno::ENOENT
     puts "File inesistente, al prossimo salvataggio dei dati sarà creato"
-  ensure 
-    return lst
+	return lst #aggiunto per correggere errore creare nuovo file .txt
+	else
+	puts "file già aesistente, premi 3 per visualizzare elenco prodotti" # aggiunto nel caso il file è già statao creato
+	 return lst
 end
 
 def scrivi_file(file_dati, lst)
@@ -30,7 +33,7 @@ def leggi_dati(lst)
   end
   print "Inserisci il prodotto: "
   prod = gets.chomp.to_s
-  print "Inserisci il prrezzoo: "
+  print "Inserisci il prrezzo: "
   prezzo = gets.chomp.to_f
   lst << [prod, prezzo]
 end
@@ -54,7 +57,7 @@ def stampa_menu
   puts "4 - scrivere il file"
 end
 
-dati = "../Ruby_dati/datti.txt"
+dati = "../RubyStudio/Ruby_dati/dati.txt"#qui c'era l'errore: path del file
 
 while true
   stampa_menu
@@ -69,7 +72,7 @@ while true
 	 when 3
 		stampa_dati(lista)
      when 4
-        scrivi_file(dati, lista)
+        scrivi_file(dati,lista)
 	 else
 		puts "Scelta errata"
   end

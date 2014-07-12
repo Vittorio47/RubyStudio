@@ -37,7 +37,7 @@ def fatt_rc( num, acc )
 end
 
 
-n = 1
+n = 5
 print "Il fattoriale (metodo iterativo) di ", n , " e' ", fatt_i(n), "\n"
 #print "Il fattoriale (metodo ricorsivo) di ", n , " e' ", fatt_r(n), "\n"
 print "Il fattoriale (metodo ricorsivo) di ", n , " e' ", fatt_rc(n, 1), "\n"
