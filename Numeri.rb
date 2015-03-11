@@ -9,7 +9,7 @@ for cont in 1..max
 		puts "esatto"
 		esatte = esatte+1
 	else 
-		puts "sbaglito"
+		puts "sbagliato"
 	end	
 end
 puts

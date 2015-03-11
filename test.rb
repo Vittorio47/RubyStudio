@@ -7,5 +7,5 @@ puts 2+"3".to_i
 
 puts "2+3=", 2+3, "\n"
 print "2+3=", 2+3, "\n"
-print '2+3=', 2+3, '\n'
+print '2+3= ', 2+3, '\n'
 puts
